@@ -1,20 +1,21 @@
-# **Weather API Exploratory Analysis**
-
+# **Clustering ALS Data**
 
 **Project Overview**
 
-This notebook analyzes historical weather data retrieved from an API to uncover trends, patterns, and potential relationships between different meteorological variables. The dataset includes metrics such as temperature, humidity, wind speed, and precipitation. The objective was to better understand weather behavior over time and explore how various conditions interact, which can be valuable for applications like agriculture planning, event scheduling, and renewable energy forecasting.
+This notebook applies clustering techniques to ALS patient data to uncover distinct groupings based on clinical and condition-related variables. After removing irrelevant features, the dataset was standardized to prepare it for clustering. The main objective was to determine the optimal number of clusters using silhouette scores, fit a K-means model, and visualize the results through a PCA transformation to better understand the structure of the data.
 
 **Methods & Results**
 
-I started by importing and structuring the API data into a usable format, followed by handling missing values and ensuring consistent data types. Visual exploratory analysis was then conducted to identify seasonal patterns, temperature fluctuations, and precipitation trends. Correlation analysis revealed strong relationships between temperature and humidity in certain months, as well as expected seasonal rainfall shifts. Additionally, time-series plots illustrated how different weather factors varied across days, months, and seasons, making it easier to spot anomalies or extreme weather events.
+The process began by filtering the dataset to retain only information relevant to ALS conditions and applying a standard scaler for normalization. Silhouette scores were calculated for various cluster counts, with two clusters emerging as the optimal choice (highest score at ~0.08). A K-means model was then fit using this cluster count, and the data was transformed with PCA into two components for visualization. The scatterplot revealed clear separation between the two clusters, suggesting that the model effectively grouped patients with similar characteristics. The distribution also indicated meaningful relationships captured by the principal components.
 
 **Key Outputs**
 
-- Cleaned and structured weather dataset from API data
-- Seasonal trend visualizations for temperature and precipitation
-- Correlation heatmaps between key weather variables
-- Time-series plots highlighting short- and long-term patterns
+- Cleaned ALS dataset containing only condition-relevant variables
+- Standardized features for improved clustering performance
+- Silhouette score analysis confirming two optimal clusters
+- K-means clustering results with PCA visualization
+- Insights into separation and structure of patient groups
 
 **Conclusion**
-This analysis provided a clear view of seasonal weather patterns and the relationships between climate variables. By building on this work, organizations could integrate real-time API data for forecasting models, plan seasonal operations more effectively, and anticipate conditions that impact agriculture, events, or infrastructure.
+
+The combination of K-means clustering and PCA revealed two distinct patient groups within the ALS dataset, highlighting meaningful differences in their clinical characteristics. These findings demonstrate the potential for clustering to aid in understanding patient subgroups, which could inform further research or tailored treatment strategies.
